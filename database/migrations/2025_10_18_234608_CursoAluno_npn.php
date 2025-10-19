@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('CursoAluno_npn', function (Blueprint $table){
             $table->id();
-            $table->float('nota',10 ,0);
-            $table->foreignId('curso_id')->constrained('curso');
-            $table->foreignId('aluno_id')->constrained('aluno');
+            $table->float('nota', 10 , 0);
+
+            // Colunas
+            $table->unsignedBigInteger('cursos_id');
+            $table->unsignedBigInteger('alunos_id');
+
+            // Restrições de Chave Estrangeira
+            $table->foreign('cursos_id')->references('id')->on('cursos')->onDelete('cascade');
+            $table->foreign('alunos_id')->references('id')->on('alunos')->onDelete('cascade');
         });
     }
 

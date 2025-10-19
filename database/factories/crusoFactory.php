@@ -3,7 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Curso; // Assumindo que o Model se chama Curso
+use Illuminate\Support\Facades\Hash;
+use app\Models\curso; // Assumindo que o Model se chama Curso
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Curso>
